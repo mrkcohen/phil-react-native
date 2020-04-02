@@ -1,0 +1,56 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "prettier", "react"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-warning-comments": [
+            "error",
+            {
+                "terms": ["nodeploy"],
+                "location": "anywhere"
+            }
+        ],
+        // BEGIN TS ONLY
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-this-alias": "off",
+        // END TS ONLY
+        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-empty-function": "warn",
+        "no-extra-semi": "off",
+        "semi": "never",
+        "no-useless-escape": "warn",
+        "no-console": "warn",
+        "no-empty-pattern": "off",
+        "no-empty": "warn",
+        "no-constant-condition": "warn",
+        "react/jsx-uses-react": "warn",
+        "react/jsx-uses-vars": "warn"
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true,
+        "mocha": true,
+        "amd": true
+    },
+    "globals": {
+        "I": "readonly",
+        "jsdom": "readonly"
+    },
+    "overrides": []
+}
