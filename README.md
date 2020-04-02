@@ -1,3 +1,3 @@
 # Phil
 
-A Groundhog's Day Weather app.
+A Groundhog's Day weather app written in React Native.
