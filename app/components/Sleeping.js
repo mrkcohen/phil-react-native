@@ -1,6 +1,8 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Button from './Button'
+import { ImageAssets } from '../assets'
+import { get } from 'lodash'
 
 class Sleeping extends React.Component {
     static navigationOptions = {
@@ -14,7 +16,7 @@ class Sleeping extends React.Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.headerText}>Phil is asleep in his burrow</Text>
-                <Image style={styles.img} resizeMode="contain" source={require('../assets/images/sleeping.jpeg')} />
+                <Image style={styles.img} resizeMode="contain" source={get(ImageAssets, 'sleeping').uri} />
                 <Button label="Go Back" onPress={() => this.props.navigation.goBack()} />
             </View>
         )

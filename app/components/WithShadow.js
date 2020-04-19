@@ -1,6 +1,8 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Button from './Button'
+import { ImageAssets } from '../assets'
+import { get } from 'lodash'
 
 class WithShadow extends React.Component {
     static navigationOptions = {
@@ -14,11 +16,7 @@ class WithShadow extends React.Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.headerText}>Phil has seen his shadow!</Text>
-                <Image
-                    style={styles.img}
-                    resizeMode="center"
-                    source={require('../assets/images/groundhog_shadow.png')}
-                />
+                <Image style={styles.img} resizeMode="center" source={get(ImageAssets, 'withShadow').uri} />
                 <Button label="Go Back" onPress={() => this.props.navigation.goBack()} />
             </View>
         )

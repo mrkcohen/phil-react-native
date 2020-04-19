@@ -1,6 +1,8 @@
 import React from 'react'
 // import { Platform, SafeAreaView } from 'react-native'
 import { Image, StyleSheet, Text, View, Button } from 'react-native'
+import { ImageAssets } from '../assets'
+import { get } from 'lodash'
 
 class Home extends React.Component {
     static navigationOptions = {
@@ -18,7 +20,7 @@ class Home extends React.Component {
         return (
             <>
                 <View style={styles.container}>
-                    <Image resizeMode="center" source={require('../assets/images/logo.png')} />
+                    <Image resizeMode="center" source={get(ImageAssets, 'logo').uri} />
                 </View>
                 <View style={styles.container}>
                     <Text style={styles.headerText}>Actions</Text>
